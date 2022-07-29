@@ -1,0 +1,45 @@
+{
+	"name": "z-glsl",
+	"description": "glsl preprocessor",
+	"version": "0.0.0-dev.0",
+	"license": "MIT",
+	"type": "module",
+	"author": "Chase Moskal <chasemoskal@gmail.com>",
+	"files": [
+		"x",
+		"s"
+	],
+	"main": "./x/z-glsl.js",
+	"bin": {
+		"z-glsl": "./x/cli.js"
+	},
+	"scripts": {
+		"build": "run-s clean && run-p compile",
+		"clean": "rimraf x && mkdirp x",
+		"compile": "tsc",
+		"watch": "tsc -w",
+		"start": "exit 0",
+		"test": "cynic node x/tests.test.js"
+	},
+	"keywords": [
+		"glsl",
+		"preprocessor",
+		"zglsl",
+		"z-glsl"
+	],
+	"dependencies": {
+		"@chasemoskal/magical": "^0.0.0-dev.1",
+		"chalk": "^5.0.1",
+		"chokidar": "^3.5.3",
+		"glob": "^8.0.3"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.2.0",
+		"@types/node": "^18.6.2",
+		"cynic": "0.1.0-dev.16",
+		"mkdirp": "^1.0.4",
+		"npm-run-all": "^4.1.5",
+		"rimraf": "^3.0.2",
+		"typescript": "^4.7.2"
+	}
+}
