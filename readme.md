@@ -19,5 +19,6 @@
 - run `npx z-glsl source dist`, this will compile your z-glsl files
   - replace `source` with the directory that has your source files
   - replace `dist` with the build directory that glsl files will be saved to
-- add `--watch` to start a watch routine
 - add `--verbose` to see more information
+- add `--watch` to start a watch routine
+- add `--poll` to use file-polling mode for the watch routine

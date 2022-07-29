@@ -12,7 +12,11 @@ import {debounce} from "@chasemoskal/magical/x/toolbox/debounce/debounce.js"
 
 deathWithDignity()
 const {flags, args: [source, destination]} = ezargs()
-let {"--watch": watch, "--verbose": verbose} = Object.fromEntries(flags.entries())
+let {
+	"--watch": watch,
+	"--verbose": verbose,
+	"--poll": poll,
+} = Object.fromEntries(flags.entries())
 
 if (watch)
 	verbose = "true"
@@ -51,7 +55,15 @@ try {
 
 	if (watch) {
 		console.log(`👁️ watching .z.glsl changes under "${source}" to compile into "${destination}"`)
-		const watcher = chokidar.watch(join(source, "**/*.glsl"), {cwd: process.cwd()})
+		if (poll)
+			console.log("♻️ polling for changes")
+		const watcher = chokidar.watch(
+			join(source, "**/*.glsl"),
+			{
+				cwd: process.cwd(),
+				usePolling: !!poll,
+			}
+		)
 		for (const event of [
 			"add",
 			"change",
