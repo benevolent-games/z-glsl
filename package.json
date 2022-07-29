@@ -1,7 +1,7 @@
 {
 	"name": "z-glsl",
 	"description": "glsl preprocessor",
-	"version": "0.0.0-dev.0",
+	"version": "0.0.0-dev.1",
 	"license": "MIT",
 	"type": "module",
 	"author": "Chase Moskal <chasemoskal@gmail.com>",
