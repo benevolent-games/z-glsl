@@ -19,6 +19,7 @@
 		"compile": "tsc",
 		"watch": "tsc -w",
 		"start": "exit 0",
+		"example": "node x/cli.js s x",
 		"test": "cynic node x/tests.test.js"
 	},
 	"keywords": [
