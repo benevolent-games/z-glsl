@@ -15,3 +15,17 @@ export class ZGlslError extends Error {
 export function err(errno: number, message: string) {
 	throw new ZGlslError(errno, message)
 }
+
+export function handleErrorsNicely<T>(fun: () => T): T {
+	try {
+		return fun()
+	}
+	catch (error) {
+		if (error instanceof ZGlslError) {
+			console.error(error.message)
+			process.exit(error.errno)
+		}
+		else
+			throw error
+	}
+}

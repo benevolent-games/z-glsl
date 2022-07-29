@@ -1,7 +1,7 @@
 
 import {err} from "./errors.js"
 
-export function makeCompiler({dirname, read, resolve}: {
+export function compilationSession({dirname, read, resolve}: {
 		dirname: (path: string) => string
 		read: (path: string) => Promise<string>
 		resolve: (a: string, ...b: string[]) => string
