@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 
 import chokidar from "chokidar"
 import {glob} from "./internal/tools/glob.js"
